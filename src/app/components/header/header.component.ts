@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime, tap, switchMap, finalize, distinctUntilChanged, filter } from 'rxjs/operators';
+import { StockInfoService } from 'src/app/services/stock-info.service';
+
 
 @Component({
   selector: 'app-header',
@@ -17,16 +19,30 @@ export class HeaderComponent implements OnInit {
   errorMsg!: string;
   minLengthTerm = 1;
   selectedStock: any = "";
-  constructor(private dataService: DataService) {
+  stockData: any; // To store the fetched stock data
+  constructor(private dataService: DataService, private stockInfoService: StockInfoService) {
 
   }
-
-
 
   onSelected() {
-    console.log("selected Movie", this.selectedStock);
-    this.selectedStock = this.selectedStock;
+    if (this.selectedStock) {
+      this.stockInfoService.getStockInfo(this.selectedStock.Symbol).subscribe(
+        (data) => {
+          console.log('Received data:', data); // Log the data here
+          this.stockData = data;
+        },
+        (error) => {
+          console.error('Error fetching stock data:', error);
+        }
+      );
+    }
   }
+
+  // onSelected() {
+  //   console.log("selected Movie", this.selectedStock);
+  //   this.selectedStock = this.selectedStock;
+  // }
+
 
   displayWith(value: any) {
     return value?.Title;

@@ -17,6 +17,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+// import { StockInfoComponentComponent } from './header/stock-info-component/stock-info-component.component';
+// import { StockInfoComponent } from './stock-info/stock-info.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {MatIconModule} from '@angular/material/icon';
     MainComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    // StockInfoComponentComponent,
+    // StockInfoComponent
   ],
   imports: [
     BrowserModule,
