@@ -1,0 +1,14 @@
+.menubar {
+  display: flex;
+
+}
+.mainDiv {
+  background: rgba(240, 128, 128, 0.149);
+  padding: 20px;
+}
+.login {
+  margin-right: 20px;
+}
+.search {
+  width: 70%;
+}

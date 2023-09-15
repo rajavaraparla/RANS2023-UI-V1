@@ -1,0 +1,142 @@
+<div class="container-fluid mainDiv">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="menubar">
+      <div class="stockData">
+        <button
+        mat-button
+        [matMenuTriggerFor]="menu"
+        (click)="fetchDataAndOpenMenu('recreational')"
+      >
+        Stock Data
+      </button>
+      <mat-menu #menu="matMenu">
+
+          <!-- Content will be populated dynamically -->
+          <ng-container *ngFor="let item of menuItems" matMenuContent>
+            <button mat-menu-item>{{ item }}</button>
+          </ng-container>
+
+      </mat-menu>
+      </div>
+      <div class="Chart">
+        <button
+        mat-button
+        [matMenuTriggerFor]="menu"
+        (click)="fetchDataAndOpenMenu('education')"
+      >
+        Chart
+      </button>
+      <mat-menu #menu="matMenu">
+
+          <!-- Content will be populated dynamically -->
+          <ng-container *ngFor="let item of menuItems" matMenuContent>
+            <button mat-menu-item>{{ item }}</button>
+          </ng-container>
+
+      </mat-menu>
+      </div>
+      <div class="filters">
+        <button
+        mat-button
+        [matMenuTriggerFor]="menu"
+        (click)="fetchDataAndOpenMenu('social')"
+      >
+        Filters
+      </button>
+      <mat-menu #menu="matMenu">
+
+          <!-- Content will be populated dynamically -->
+          <ng-container *ngFor="let item of menuItems" matMenuContent>
+            <button mat-menu-item>{{ item }}</button>
+          </ng-container>
+
+      </mat-menu>
+      </div>
+      <div class="scanners">
+        <button
+        mat-button
+        [matMenuTriggerFor]="menu"
+        (click)="fetchDataAndOpenMenu('relaxation')"
+      >
+        Scanners
+      </button>
+      <mat-menu #menu="matMenu">
+
+          <!-- Content will be populated dynamically -->
+          <ng-container *ngFor="let item of menuItems" matMenuContent>
+            <button mat-menu-item>{{ item }}</button>
+          </ng-container>
+
+      </mat-menu>
+      </div>
+      <div class="research">
+        <button
+        mat-button
+        [matMenuTriggerFor]="menu"
+        (click)="fetchDataAndOpenMenu('cooking')"
+      >
+        research
+      </button>
+      <mat-menu #menu="matMenu">
+
+          <!-- Content will be populated dynamically -->
+          <ng-container *ngFor="let item of menuItems" matMenuContent>
+            <button mat-menu-item>{{ item }}</button>
+          </ng-container>
+
+      </mat-menu>
+      </div>
+    </div>
+
+    </div>
+    <div class="col-md-5">
+      <div class="wrapper">
+
+        <mat-form-field class="example-full-width search">
+          <input class="" matInput placeholder="Search Stock" [(ngModel)]="selectedStock" [matAutocomplete]="auto"
+            [formControl]="searchMoviesCtrl" placeholder="Min 3 Characters Ex. Ant">
+          <button *ngIf="selectedStock" matSuffix mat-icon-button aria-label="Clear" (click)="clearSelection()">
+            <mat-icon>close</mat-icon>
+          </button>
+          <mat-autocomplete [panelWidth]="400" #auto="matAutocomplete" (optionSelected)="onSelected()"
+            [displayWith]="displayWith">
+            <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+            <ng-container *ngIf="!isLoading">
+              <mat-option *ngFor="let stock of filteredStocks" [value]="stock">
+                <!-- <span><b>{{movie.Title}}</b> ({{movie.Year}})</span> -->
+                <span><b>{{stock.Symbol}}</b> ({{stock.Name}})</span>
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <br>
+
+        <ng-container *ngIf="errorMsg; else elseTemplate">
+          {{errorMsg}}
+        </ng-container>
+        <ng-template #elseTemplate>
+          <div class="movie-details" *ngIf="selectedStock?.Title">
+            <div>
+              <img [src]="selectedStock?.Poster" style="height: 250px;" />
+            </div>
+            <div>
+              <h3>Selected Value: {{selectedStock?.Title}}</h3>
+              <ul>
+                <li>Year: {{selectedStock?.Year}}</li>
+              </ul>
+            </div>
+          </div>
+        </ng-template>
+
+      </div>
+
+    </div>
+    <div class="col-md-3">
+      <button mat-raised-button class="login" color="primary">Login</button>
+      <button mat-raised-button class="ml-4" color="accent">Logout</button>
+
+    </div>
+  </div>
+</div>
