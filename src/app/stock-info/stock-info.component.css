@@ -1,0 +1,106 @@
+/* Add this to your CSS file */
+
+.stock-info-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stock-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .stock-section {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .bordered-section {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Add more styling and customization as needed */
+  
+
+  /* Add this to your CSS file */
+
+/* ... Other styles ... */
+
+.fundamental-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .fundamental-item {
+    flex: 0 1 calc(50% - 10px); /* Adjust the width as needed */
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 5px;
+  }
+  
+  /* ... Other styles ... */
+  .basic-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .basic-item {
+    flex: 0 1 calc(50% - 10px); /* Adjust the width as needed */
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 5px;
+  }
+  .basic-and-fundamentals {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  table {
+    border-collapse: collapse; /* Ensure cell borders collapse into a single line */
+    width: 100%; /* Adjust the table width as needed */
+  }
+  
+  td.separator {
+    border-left: 1px solid #ccc; /* Add a left border to create the separator */
+    padding: 0 10px; /* Adjust padding as needed */
+  }

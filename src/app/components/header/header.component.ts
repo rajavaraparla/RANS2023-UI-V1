@@ -3,6 +3,7 @@ import { DataService } from 'src/app/services/data.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime, tap, switchMap, finalize, distinctUntilChanged, filter } from 'rxjs/operators';
 import { StockInfoService } from 'src/app/services/stock-info.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,16 +21,17 @@ export class HeaderComponent implements OnInit {
   minLengthTerm = 1;
   selectedStock: any = "";
   stockData: any; // To store the fetched stock data
-  constructor(private dataService: DataService, private stockInfoService: StockInfoService) {
+  constructor(private dataService: DataService, private stockInfoService: StockInfoService,  private router: Router) {
 
   }
 
   onSelected() {
     if (this.selectedStock) {
       this.stockInfoService.getStockInfo(this.selectedStock.Symbol).subscribe(
-        (data) => {
-          console.log('Received data:', data); // Log the data here
-          this.stockData = data;
+        () => {
+          // this.stockData = data;
+          // console.log("HEADER-ONSELECTED:", data)
+          this.router.navigate(['/stock-info', this.selectedStock.Symbol]);
         },
         (error) => {
           console.error('Error fetching stock data:', error);

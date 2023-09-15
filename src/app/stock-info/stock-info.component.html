@@ -1,0 +1,90 @@
+<div class="stock-info-container">
+    <!-- Basic Information and Fundamentals Section -->
+    <div class="basic-and-fundamentals">
+      <!-- Basic Information Section -->
+      <div class="stock-section">
+        <h2>Basic Information</h2>
+        <div class="bordered-section">
+          <div class="basic-info">
+            <div class="basic-item">
+              <strong>Symbol:</strong> {{stockData.Symbol}}
+            </div>
+            <div class="basic-item">
+              <strong>Name:</strong> {{stockData.Company}}
+            </div>
+            <div class="basic-item">
+              <strong>Sector:</strong> {{stockData.sector}}
+            </div>
+            <div class="basic-item">
+                <strong>Exchange:</strong> {{stockData.Exchange}}
+            </div>
+            <div class="basic-item">
+                <strong>Price:</strong> {{stockData.Price}}
+            </div>
+            <div class="basic-item">
+                <strong>IPO Date:</strong> {{stockData.IPODate}}
+            </div>
+
+            
+            <!-- Add more basic information items as needed -->
+          </div>
+        </div>
+      </div>
+  
+      <!-- Fundamentals Section -->
+      <div class="stock-section">
+        <h2>Fundamentals</h2>
+        <div class="bordered-section">
+          <div class="fundamental-info">
+
+            <div class="fundamental-item">
+                <strong>Shares Float:</strong> {{stockData.floatSharesStr}}
+            </div>
+            <div class="fundamental-item">
+                <strong>Institutions Count:</strong> {{stockData.institutionsCount}}
+            </div>
+            <div class="fundamental-item">
+                <strong>Market Cap:</strong> {{stockData.marketCapStr}}
+            </div>
+            <div class="fundamental-item">
+                <strong>Most Recent Q:</strong> {{stockData.mostRecentQuarter}}
+            </div>
+            <div class="fundamental-item">
+                <strong>Shares OutStanding:</strong> {{stockData.sharesOutstandingStr}}
+            </div>                      
+            <div class="fundamental-item">
+                <strong>Short Ratio:</strong> {{stockData.shortRatio}}
+            </div>                      
+
+            <!-- Add more fundamental information items as needed -->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="stock-section">
+      <h2>Financials</h2>
+      <div class="bordered-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Open</th>
+              <th>Close</th>
+              <th>Volume</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023-09-01</td>
+              <td>$100.00</td>
+              <td>$105.00</td>
+              <td>1,000,000</td>
+            </tr>
+            <!-- Add more rows with financial data as needed -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

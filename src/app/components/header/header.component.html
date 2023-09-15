@@ -112,12 +112,7 @@
         </mat-form-field>
 
         <br>
-        <!-- In your StockInfoComponent HTML -->
-        <div *ngIf="stockData">
-          <h2>{{ stockData.Symbol }}</h2>
-          <p>Price: {{ stockData.Price }}</p>
-          <!-- Display other relevant stock data -->
-        </div>
+
 
 
         <ng-container *ngIf="errorMsg; else elseTemplate">
