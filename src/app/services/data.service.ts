@@ -8,6 +8,7 @@ import { Observable, catchError, of } from 'rxjs';
 })
 export class DataService {
   private autoCompleteList: { Symbol: string, Name: string }[] = [];
+  private apiUrl = '/data/stocks-list';
   // Create an instance of HttpHeaders and set the Content-Type to application/json
   private httpOptions = {
     headers: new HttpHeaders({
@@ -24,7 +25,8 @@ export class DataService {
   private fetchAutocompleteList(): Observable<{ Symbol: string, Name: string }[]> {
     // Make an HTTP call to fetch the autocomplete list
     // Replace 'YOUR_API_KEY' and 'YOUR_ENDPOINT' with your actual API key and endpoint
-    return this.http.get<{ Symbol: string, Name: string }[]>('http://localhost:5000/data/stocks-list').pipe(
+    // return this.http.get<{ Symbol: string, Name: string }[]>('http://localhost:5000/data/stocks-list').pipe(
+    return this.http.get<{ Symbol: string, Name: string }[]>(this.apiUrl).pipe(
       catchError((error) => {
 
         console.error('Error fetching autocomplete list', error);
