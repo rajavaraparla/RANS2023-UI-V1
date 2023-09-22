@@ -95,7 +95,7 @@
 
         <mat-form-field class="example-full-width search">
           <input class="" matInput placeholder="Search Stock" [(ngModel)]="selectedStock" [matAutocomplete]="auto"
-            [formControl]="searchMoviesCtrl" placeholder="Min 3 Characters Ex. Ant">
+            [formControl]="searchMoviesCtrl" placeholder="Select Stock Ex. AAPL">
           <button *ngIf="selectedStock" matSuffix mat-icon-button aria-label="Clear" (click)="clearSelection()">
             <mat-icon>close</mat-icon>
           </button>
@@ -104,7 +104,6 @@
             <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
             <ng-container *ngIf="!isLoading">
               <mat-option *ngFor="let stock of filteredStocks" [value]="stock">
-                <!-- <span><b>{{movie.Title}}</b> ({{movie.Year}})</span> -->
                 <span><b>{{stock.Symbol}}</b> ({{stock.Name}})</span>
               </mat-option>
             </ng-container>

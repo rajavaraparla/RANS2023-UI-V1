@@ -2,7 +2,7 @@
 
 .stock-info-container {
     max-width: 100%;
-    margin: 0 auto;
+    margin: 10 left;
     padding: 20px;
     background-color: #f4f4f4;
     border-radius: 5px;
@@ -16,8 +16,15 @@
   
   .stock-section {
     margin-bottom: 20px;
+    max-width: 60%;
+    margin: 10 left;
   }
-  
+  .news-section {
+    /* margin-bottom: 30px; */
+    max-width: 40%;
+    /* margin: 10 left; */
+  }
+
   h2 {
     font-size: 18px;
     margin-bottom: 10px;
@@ -103,4 +110,14 @@
   td.separator {
     border-left: 1px solid #ccc; /* Add a left border to create the separator */
     padding: 0 10px; /* Adjust padding as needed */
+  }
+
+  .info-label {
+    flex: 5;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+  
+  .info-value {
+    flex: 2;
   }

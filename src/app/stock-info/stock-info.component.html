@@ -7,10 +7,16 @@
         <div class="bordered-section">
           <div class="basic-info">
             <div class="basic-item">
+              <div class="info-label">
+
               <strong>Symbol:</strong> {{stockData.Symbol}}
+              </div>
             </div>
             <div class="basic-item">
+              <div class="info-value">
               <strong>Name:</strong> {{stockData.Company}}
+              </div>
+
             </div>
             <div class="basic-item">
               <strong>Sector:</strong> {{stockData.sector}}
@@ -26,16 +32,7 @@
             </div>
 
             
-            <!-- Add more basic information items as needed -->
-          </div>
-        </div>
-      </div>
-  
-      <!-- Fundamentals Section -->
-      <div class="stock-section">
-        <h2>Fundamentals</h2>
-        <div class="bordered-section">
-          <div class="fundamental-info">
+    
 
             <div class="fundamental-item">
                 <strong>Shares Float:</strong> {{stockData.floatSharesStr}}
@@ -60,6 +57,23 @@
           </div>
         </div>
       </div>
+        <!-- News Section -->
+        <div class="news-section">
+          <h2>News</h2>
+          <div class="bordered-section">
+            <!-- <div class="basic-info"> -->
+              <!-- <div class="basic-item"> -->
+                <ul *ngFor='let news of stockData?.news'>
+                  <li>
+                    <a href="{{news.link}}" target="_blank">{{news.news_time}} ({{news.publisher}}) - {{news.title}}</a>
+                  </li>
+                </ul>
+            
+              </div>
+              <!-- Add more fundamental information items as needed -->
+            <!-- </div> -->
+          <!-- </div> -->
+        </div>
     </div>
     
     <div class="stock-section">
