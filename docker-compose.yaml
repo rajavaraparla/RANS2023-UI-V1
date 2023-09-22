@@ -6,3 +6,6 @@ services:
       dockerfile: './Dockerfile_ui'
     ports:
     - "4200:4200"
+networks:
+  rans:
+    driver: bridge
