@@ -6,6 +6,10 @@ services:
       dockerfile: './Dockerfile_ui'
     ports:
     - "4200:4200"
+    networks:
+      - rans
+    container_name: rans-ui
 networks:
-  rans:
-    driver: bridge
+  rans:  # Define the custom network name (must match the name in project 1)
+    external: true  # Indicate that this network is external
+
