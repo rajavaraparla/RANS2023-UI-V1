@@ -82,7 +82,7 @@
               <tr>
                 <th>Earnings Date</th>
                 <th>Quarter</th>
-                <th>Sales</th>
+                <th>Sales(millions)</th>
                 <th>Sales %</th>
                 <th>EPS</th>
                 <th>EPS %</th>
@@ -95,10 +95,10 @@
               <tr *ngFor="let financialData of stockData.financials">
                 <td>{{ financialData['Earnings Date'] }}</td>
                 <td>{{ financialData.Quarter }}</td>
-                <td>{{ financialData['Sales Str'] }}</td>
-                <td>{{ financialData['Sales %'] }}</td>
+                <td>{{ financialData['Sales(millions)'] }}</td>
+                <td>{{ financialData['Sales % Change'] }}</td>
                 <td>{{ financialData.EPS }}</td>
-                <td>{{ financialData['EPS Change %'] }}</td>
+                <td>{{ financialData['EPS % Change'] }}</td>
                 <td>{{ financialData['Earnings Surprise'] }}</td>
                 <td>{{ financialData['Price Change %'] }}</td>
               </tr>
