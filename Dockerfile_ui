@@ -7,14 +7,10 @@ WORKDIR /app
 RUN npm install -g @angular/cli
 
 # Copy the package.json and package-lock.json files to the container
-<<<<<<< HEAD
-COPY package*.json ./
 COPY angular.json ./
 COPY tsconfig.app.json ./
 COPY tsconfig.json ./
-=======
 COPY package.json .
->>>>>>> 4f30d83c647e20d608c831679f57a359d89fc6eb
 
 
 # Install app dependencies
