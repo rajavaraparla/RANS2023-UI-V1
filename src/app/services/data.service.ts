@@ -8,7 +8,7 @@ import { Observable, catchError, of } from 'rxjs';
 })
 export class DataService {
   private autoCompleteList: { Symbol: string, Name: string }[] = [];
-  private server = "http://marketinsightiq.com:5000"
+  private server = "http:/localhost:5000"
   private apiUrl = `${this.server}/v1/data/stocks-list`;
 
   // Create an instance of HttpHeaders and set the Content-Type to application/json
