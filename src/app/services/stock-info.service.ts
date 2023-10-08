@@ -12,7 +12,7 @@ export class StockInfoService {
 
   getStockInfo(stockSymbol: string): Observable<any> {
 
-    const url = `${this.server}/v1/stock-info/fundamentals?ticker=${stockSymbol}`;
+    const url = `${this.server}/v1/data/stock-info/fundamentals?ticker=${stockSymbol}`;
     
     // I need to Log the data before  returning
     // console.log(this.http.get(url));
