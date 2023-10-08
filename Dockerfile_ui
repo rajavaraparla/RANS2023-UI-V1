@@ -4,25 +4,23 @@ FROM node:18
 # Set the working directory in the container
 WORKDIR /app
 
-RUN npm install -g @angular/cli
 
 # Copy the package.json and package-lock.json files to the container
-COPY angular.json ./
-COPY tsconfig.app.json ./
-COPY tsconfig.json ./
-COPY package.json .
+COPY *.json .
+COPY *.yaml .
 
 
+RUN npm install -g @angular/cli
 # Install app dependencies
 RUN npm install
 RUN mkdir -p /app/src
 
 # Copy the rest of the application code to the container
 # COPY src  /app
-
+# COPY . .
 
 # Build the Angular app
-RUN ng build
+#RUN ng build
 
 # Expose port 80 for the Angular app (adjust as needed)
 EXPOSE 4200
